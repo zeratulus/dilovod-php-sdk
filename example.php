@@ -34,7 +34,7 @@ try {
     
     try {
         $products = $client->getObjects(
-            'catalogs.products',  // Тип об'єкта
+            'catalogs.goods',  // Тип об'єкта
             [],                    // Фільтр (порожній = всі товари)
             ['name', 'price'],    // Поля для повернення
             'name ASC',           // Сортування за назвою
@@ -81,8 +81,8 @@ try {
     
     try {
         $newPartner = [
-            'type' => 'catalogs.partners',
-            'name' => 'Новий Клієнт',
+            'type' => 'catalogs.persons',
+            'name' => 'Новий Клієнт 007',
             'is_buyer' => true,
             // Додайте інші обов'язкові поля згідно з документацією API
         ];
