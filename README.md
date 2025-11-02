@@ -26,7 +26,7 @@ try {
     $client = new DilovodApiClient('YOUR_API_KEY');
     
     // Отримання списку товарів
-    $products = $client->getObjects('catalogs.products', [], ['name', 'price'], '', 10);
+    $products = $client->getObjects('catalogs.goods', [], ['name', 'price'], '', 10);
     print_r($products);
     
 } catch (DilovodApiException $e) {
@@ -50,7 +50,7 @@ $product = $client->getObject('PRODUCT_ID');
 
 ```php
 $newPartner = [
-    'type' => 'catalogs.partners',
+    'type' => 'catalogs.persons',
     'name' => 'Новий Клієнт',
     'is_buyer' => true
 ];
@@ -79,7 +79,7 @@ $result = $client->saleOrderCreate($orderData);
 ```php
 // Отримати товари з фільтром
 $products = $client->getObjects(
-    'catalogs.products',
+    'catalogs.goods',
     ['price' => ['>', 100]], // Фільтр
     ['name', 'price'],       // Поля
     'name ASC',              // Сортування
